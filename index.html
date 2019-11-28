@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Macbase Software</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='styleshee26t' type='text/css'>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+</head>
+<body>
+
+	<!-- Navbar _____________________________________________________________________ -->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+		<div class="container">
+			<a class="navbar-brand" href="#">
+				<img src="images/logo.png" width="50" height="30" class="d-inline-block align-top" alt="" >Cristys <i>Book</i>  Club
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
+					<form class="form-inline">
+						<button id="addABookButton" class="btn btn-primary">Add a book</button>
+					</form>
+
+					
+				</ul>
+			</div>
+
+			<form class="form-inline">
+				<label class="mr-sm-2">Dark Theme:</label>
+				<input class="form-control mr-sm-2" type="checkbox" data-toggle="toggle" data-size="xs" name="darkthemetoggle">
+			</form>
+
+
+		</div>
+	</nav>
+	<!-- end of navbar ___________________________________________________ -->
+
+
+
+	<div class="container">
+
+
+		<div class="createDiv">
+			
+			<div class="row">
+				
+				<form id="book-form">
+
+					<div class="form-group">
+
+						<div class="row">
+							<div class="col-lg-4 col-md-4">
+								<label for="title">Book Image:</label>
+							</div>
+							<div class="col-lg-8 col-md-8">
+								<input class="form-control">
+							</div>
+						</div>
+					</div>
+			
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-4 col-md-4">
+								<label for="title">Book Title:</label>
+							</div>
+							<div class="col-lg-8 col-md-8">
+								<input type="text" id="title" name="title" class="form-control">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+
+						<div class="row">
+							<div class="col-lg-4 col-md-4">
+								<label for="author">Book Author:</label>
+							</div>
+							<div class="col-lg-8 col-md-8">
+								<input type="text" id="author" name="author" class="form-control">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+
+						<div class="row">
+							<div class="col-lg-4 col-md-4">
+								<label for="isbn">ISBN Number:</label>
+							</div>
+							<div class="col-lg-8 col-md-8">
+								<input type="text" id="isbn" name="isbn" class="form-control">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+
+
+						<div class="row">
+							<div class="col-lg-4 col-md-4">
+								<label for="owner">Book Owner:</label>
+							</div>
+							<div class="col-lg-8 col-md-8">
+								<select class="form-control">
+									<option>Cristy Monroe</option>
+									<option>Madison Everson</option>
+									<option>Lerato Rammutla</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<input type="submit" name="" value="Add Book" class="btn btn-secondary btn-block">
+				</form>
+			</div>
+		</div>
+
+
+		<div id="displayDiv" class="">
+			
+			<div class="row">
+				<div class="col-md-12">
+					
+				<button id="showAllBooksButton"  class="btn btn-primary">Show All Books</button>
+				</div>	
+			</div>
+
+			<div class="row">
+				
+				<div id="displayBooks" class="col-md-12">
+					<table class="table table-stripped mt-5">
+						<thead>
+							<tr>
+								<th>Book Image</th>
+								<th>Book Title</th>
+								<th>Book Author</th>
+								<th>ISBN #</th>
+								<th>Book Owner</th>
+								<th>del</th>
+							</tr>
+						</thead>
+
+						<tbody id="book-list"></tbody>
+					</table>
+				</div>
+			</div>
+			
+
+		</div>
+
+	</div> <!-- end of main container-->
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+ 
+   	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.budle.js"></script>
+   	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+   	<script type="text/javascript" src="/node_modules/bootstrap/js/dist/collapse.js.map"></script>
+   	<script type="text/javascript" src="/node_modules/bootstrap/js/dist/dropdown.js.map"></script>
+   	<script type="text/javascript" src="js/index.mjs"></script>
+   	<script type="text/javascript" src="js/app.mjs"></script>
+
+   	<script type="text/javascript">
+   	</script>
+
+</body>
+</html>

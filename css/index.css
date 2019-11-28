@@ -1,0 +1,54 @@
+/*
+
+	dark theme idea: give every component a class of 'lightened'
+	if button is toggled: remove that class and then add a new one called 
+	darkened;
+
+	in css i have a ligtened version and a darkened version
+
+*/
+
+html,body{
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	font-family: sans-serif;
+}
+nav #addABookButton{
+	border-radius: 30px;
+}
+
+
+.createDiv{
+	display: none;
+}
+.navbar-brand{
+	font-weight: bold;
+}
+.navbar-brand i{
+	color: blue ;
+}
+
+
+/**/
+.createDiv form{
+	width: 60%;
+}
+
+.container #displayDiv{
+	margin-top: 50px;
+}
+
+.container #displayDiv button{
+	width : 100%;
+	border-radius: 30px;
+	margin-top: 10px;
+}
+.container #displayDiv #displayBooks{
+	display: none;
+}
+
+
+
