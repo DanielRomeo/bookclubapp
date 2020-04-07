@@ -22,7 +22,7 @@ nav #addABookButton{
 
 
 .createDiv{
-	display: none;
+	/*display: none;*/
 }
 .navbar-brand{
 	font-weight: bold;
@@ -47,7 +47,7 @@ nav #addABookButton{
 	margin-top: 10px;
 }
 .container #displayDiv #displayBooks{
-	display: none;
+	/*display: none;*/
 }
 
 

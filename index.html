@@ -14,13 +14,13 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='styleshee26t' type='text/css'>
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-
+    <script type="text/javascript"> console.log("hi");</script>
 </head>
-<body>
+<body id="body">
 
 	<!-- Navbar _____________________________________________________________________ -->
 
@@ -35,19 +35,19 @@
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
+				<!-- <ul class="navbar-nav mr-auto">
 
 					<form class="form-inline">
 						<button id="addABookButton" class="btn btn-primary">Add a book</button>
 					</form>
 
 					
-				</ul>
+				</ul> -->
 			</div>
 
 			<form class="form-inline">
 				<label class="mr-sm-2">Dark Theme:</label>
-				<input class="form-control mr-sm-2" type="checkbox" data-toggle="toggle" data-size="xs" name="darkthemetoggle">
+				<input id="darkThemeCheckbox" class="form-control mr-sm-2" type="checkbox" data-toggle="toggle" data-size="xs" name="darkthemetoggle">
 			</form>
 
 
@@ -57,23 +57,20 @@
 
 
 
-	<div class="container">
-
+	<div id="myContainer" class="container">
 
 		<div class="createDiv">
-			
+
 			<div class="row">
-				
+
 				<form id="book-form">
-
 					<div class="form-group">
-
 						<div class="row">
 							<div class="col-lg-4 col-md-4">
 								<label for="title">Book Image:</label>
 							</div>
 							<div class="col-lg-8 col-md-8">
-								<input class="form-control">
+								<input id="imagefield" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -84,7 +81,7 @@
 								<label for="title">Book Title:</label>
 							</div>
 							<div class="col-lg-8 col-md-8">
-								<input type="text" id="title" name="title" class="form-control">
+								<input type="text" id="titlefield" name="title" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -96,7 +93,7 @@
 								<label for="author">Book Author:</label>
 							</div>
 							<div class="col-lg-8 col-md-8">
-								<input type="text" id="author" name="author" class="form-control">
+								<input type="text" id="authorfield" name="author" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -108,7 +105,7 @@
 								<label for="isbn">ISBN Number:</label>
 							</div>
 							<div class="col-lg-8 col-md-8">
-								<input type="text" id="isbn" name="isbn" class="form-control">
+								<input type="text" id="isbnfield" name="isbn" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -121,7 +118,7 @@
 								<label for="owner">Book Owner:</label>
 							</div>
 							<div class="col-lg-8 col-md-8">
-								<select class="form-control">
+								<select id="ownerfield" class="form-control">
 									<option>Cristy Monroe</option>
 									<option>Madison Everson</option>
 									<option>Lerato Rammutla</option>
@@ -138,12 +135,7 @@
 
 		<div id="displayDiv" class="">
 			
-			<div class="row">
-				<div class="col-md-12">
-					
-				<button id="showAllBooksButton"  class="btn btn-primary">Show All Books</button>
-				</div>	
-			</div>
+			
 
 			<div class="row">
 				
@@ -170,19 +162,47 @@
 
 	</div> <!-- end of main container-->
 
+	<div id="aa">lala</div>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
- 
+ 	<script type="text/javascript" src="js/jquerylibrary.js"></script>
+
    	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.budle.js"></script>
    	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
    	<script type="text/javascript" src="/node_modules/bootstrap/js/dist/collapse.js.map"></script>
    	<script type="text/javascript" src="/node_modules/bootstrap/js/dist/dropdown.js.map"></script>
-   	<script type="text/javascript" src="js/index.mjs"></script>
-   	<script type="text/javascript" src="js/app.mjs"></script>
-
+   	<script type="text/javascript" src="js/app.js"></script>
    	<script type="text/javascript">
+   		
+   		$(document).ready(function(){
+   			$("#darkThemeCheckbox").change(function(){
+   				if(this.checked){
+   					$('#body').css({
+   						"backgroundColor" : "red"
+   					});
+
+   					$('#book-form label').css({
+   						"color" : "white"
+   					})
+   				}else{
+   					$('#body').css({
+   						"backgroundColor" : "white"
+   					});
+
+   					$('#book-form label').css({
+   						"color" : "black"
+   					})
+
+   				}
+   			})
+
+
+
+
+
+   		});
    	</script>
 
 </body>
